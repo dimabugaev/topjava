@@ -14,6 +14,23 @@
         .excess {
             color: red;
         }
+        form {
+            /*margin: 0 auto; */
+            width: 800px;
+
+            padding: 1em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        form li {
+            float: left;
+        }
     </style>
 </head>
 <body>
@@ -21,6 +38,30 @@
     <h3><a href="index.html">Home</a></h3>
     <hr/>
     <h2>Meals</h2>
+
+    <form method="get" action="meals">
+        <ul>
+        <li>
+            <label for="startDate">from date:</label>
+            <input type="date" id="startDate" value="${param.startDate}" name="startDate">
+        </li>
+        <li>
+            <label for="endDate">to date:</label>
+            <input type="date" id="endDate" value="${param.endDate}" name="endDate">
+        </li>
+        <li>
+            <label for="startTime">from time:</label>
+            <input type="time" id="startTime" value="${param.startTime}" name="startTime">
+        </li>
+        <li>
+            <label for="endTime">to time:</label>
+            <input type="time" id="endTime" value="${param.endTime}" name="endTime">
+        </li>
+
+        </ul>
+        <button type="submit">Set</button>
+    </form>
+
     <a href="meals?action=create">Add Meal</a>
     <br><br>
     <table border="1" cellpadding="8" cellspacing="0">
